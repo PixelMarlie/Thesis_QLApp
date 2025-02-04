@@ -210,7 +210,7 @@ input:focus {
     margin-top: 5px;
 }
 
-button {
+.submit-button {
     width: 100%;
     padding: 12px;
     background: var(--primary-color);
@@ -223,12 +223,12 @@ button {
     transition: all 0.3s ease;
 }
 
-button:disabled {
+.submit-button:disabled {
     background: #cccccc;
     cursor: not-allowed;
 }
 
-button:hover:not(:disabled) {
+.submit-button:hover:not(:disabled) {
     background: var(--secondary-color);
     transform: translateY(-2px);
 }
