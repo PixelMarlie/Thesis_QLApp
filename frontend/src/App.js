@@ -42,6 +42,9 @@ function App() {
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
             <h1>Recommendations</h1>
+            <a href="/logout">
+                <button className="logout-btn">Logout</button>
+            </a>
             <ul>
                 {recommendations.map((rec, index) => (
                     <li key={index}>{rec}</li>

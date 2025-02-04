@@ -1,0 +1,15 @@
+.vscode/settings.json
+backend/backend/__pycache__/__init__.cpython-313.pyc
+backend/backend/__pycache__/settings.cpython-313.pyc
+backend/backend/__pycache__/urls.cpython-313.pyc
+backend/backend/__pycache__/wsgi.cpython-313.pyc
+backend/backend/settings.py
+backend/SocialLearningApp/__pycache__/__init__.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/admin.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/api_views.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/apps.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/models.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/urls.cpython-313.pyc
+backend/SocialLearningApp/__pycache__/views.cpython-313.pyc
+backend/SocialLearningApp/migrations/__pycache__/__init__.cpython-313.pyc
+backend/SocialLearningApp/migrations/__pycache__/0001_initial.cpython-313.pyc

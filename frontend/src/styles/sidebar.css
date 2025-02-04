@@ -1,0 +1,163 @@
+.sidebar-container {
+    position: relative;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: black;
+    transition: left 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar.open{
+    left:0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  align-items: center;
+  padding: 10px 0;
+  margin: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sidebar li svg {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+}
+
+/*
+.sidebar li:hover {
+  background-color: #fefcfc;
+}
+
+/*
+.sidebar li:last-child {
+  border-bottom: none;
+}
+*/
+
+.sidebar-links li{
+    margin: 20px 0;
+}
+
+.sidebar-links a{
+    color:white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Montserrat";
+}
+
+.sidebar-links a:hover {
+    color: #f1f1f1;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 360px;
+    right: -38px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .close-btn svg {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .close-btn:hover {
+    background-color: #bbb;
+  }
+  
+  /* OPEN SIDEBAR*/
+
+  .sidebar-overlay {
+    display: none;
+  }
+  
+
+  .sidebar-overlay.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+  }
+
+  .sidebar-logo {
+    margin-bottom: 1px;
+    border-radius: 10px;
+    margin-top: 90px;
+  }
+
+.sb-dropdown{
+  list-style-type: none;
+  padding-left: 30px;
+  margin-top: 10px;
+  border: 1px;
+  border-radius: 5px;
+  background-color: none;
+  animation: slideDown 0.3s ease; 
+  align-items: center;
+  }
+
+  .sb-dropdown-li{
+    padding: 5px 10px;
+    padding-left: 10px;
+  }
+  
+  .dd-li{
+    padding: 0px 0;
+  }
+
+  .sb-dropdown a{
+    padding-left: 20px;
+    font-size: small;
+    text-align: center;
+  }
+
+  .sb-dropdown-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: "Montserrat";
+  }
+  
+  .sb-dropdown-btn svg {
+    flex-shrink: 0;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 500px;
+    }
+  }
