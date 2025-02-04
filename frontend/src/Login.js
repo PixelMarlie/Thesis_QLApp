@@ -1,21 +1,23 @@
 import axios from "axios";
-import { Lock, User } from 'lucide-react'; // You can also add icons similar to the Register form
+import { Lock, User } from 'lucide-react';
 import React, { useState } from "react";
 import './styles/formStyles.css';
 import backgroundImage from './styles/image/BG.jpg';
 
-function Login({ setToken, switchToRegister }) {
-    const [username, setUsername] = useState("");
+function Login({ setToken, setUsername, switchToRegister }) { 
+    const [localUsername, setLocalUsername] = useState(""); 
     const [password, setPassword] = useState("");
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post("http://127.0.0.1:8000/api/login/", {
-                username,
+                username: localUsername, // Use localUsername 
                 password,
             });
             setToken(response.data.access);
+            setUsername(localUsername); 
+            localStorage.setItem("username", localUsername); // Store in localStorage
         } catch (error) {
             console.error("Login failed:", error);
         }
@@ -23,7 +25,6 @@ function Login({ setToken, switchToRegister }) {
 
     return (
         <div className="form-container" style={{ backgroundImage: `url(${backgroundImage})`}}>
-            {/* Centered text above the form */}
             <div className="app-title">
                 Social Learning App with Enhanced Q-Learning
             </div>
@@ -39,8 +40,8 @@ function Login({ setToken, switchToRegister }) {
                             <input
                                 id="username"
                                 type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
+                                value={localUsername} 
+                                onChange={(e) => setLocalUsername(e.target.value)} 
                                 required
                             />
                         </div>

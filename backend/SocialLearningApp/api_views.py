@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from .models import UserProfile
 from django.contrib.auth import logout
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
 
 class RegisterAPI(APIView):
     def post(self, request):
@@ -38,6 +40,7 @@ class LoginAPI(APIView):
         else:
             return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
+# QLearning: States
 class StateAPI(APIView):
     def post(self, request):
         user_id = request.data.get('user_id')
@@ -47,6 +50,7 @@ class StateAPI(APIView):
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
+# QLearning: Agent Recommendation
 class RecommendationsAPI(APIView):
     def get(self, request, user_id):
         try:
@@ -55,7 +59,8 @@ class RecommendationsAPI(APIView):
             return Response({"recommendation": recommendation}, status=status.HTTP_200_OK)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        
+
+# QLearning: Rewards        
 class LogInteractionAPI(APIView):
     def post(self, request):
         data = request.data
@@ -71,6 +76,15 @@ class LogInteractionAPI(APIView):
             return Response({"message": "Interaction logged successfully"}, status=status.HTTP_201_CREATED)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+# Homepage
+class HomeAPI(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        user = request.user  # Get the authenticated user
+        return Response({"message": f"Welcome back, {user.username}!"}, status=status.HTTP_200_OK)
         
 class LogoutAPI(APIView):
     def post(self, request):
