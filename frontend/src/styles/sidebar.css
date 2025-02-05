@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 .sidebar-container {
     position: relative;
 }
@@ -8,7 +10,7 @@
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: black;
+    background-color: white;
     transition: left 0.3s ease;
     padding: 20px;
     z-index: 1000;
@@ -28,7 +30,7 @@
   align-items: center;
   padding: 10px 0;
   margin: 10px 0;
-  border-bottom: 1px solid #f1f1f1;
+  border: 2px solid black;
 }
 
 .sidebar li svg {
@@ -39,39 +41,62 @@
 .sidebar-links a {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
 /*
 .sidebar li:hover {
-  background-color: #fefcfc;
-}
-
-/*
-.sidebar li:last-child {
-  border-bottom: none;
+  background-color: rgb(0, 106, 255);
 }
 */
+
+.sidebar li:last-child {
+  border: none;
+  margin-top: 450px;
+}
+
 
 .sidebar-links li{
     margin: 20px 0;
 }
 
 .sidebar-links a{
-    color:white;
+    color: black;
     text-decoration: none;
     font-size: 16px;
-    font-family: "Montserrat";
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+.sidebar-links li button {
+  color: black;
+  background-color: white;
+  font-family: "Roboto";
+  font-size: 16px;
+  margin-right: 150px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  border-width: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: -2px;
+}
+
+.sidebar-links li button:hover {
+  background-color: blue;
+  color: #fff;
 }
 
 .sidebar-links a:hover {
-    color: #f1f1f1;
+    color: blue;
   }
   
   .close-btn {
     position: absolute;
     top: 360px;
     right: -38px;
-    background-color: black;
+    background-color: blue;
     color: white;
     border: none;
     padding: 8px;

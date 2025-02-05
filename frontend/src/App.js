@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
+import Sidebar from "./components/Sidebar.js";
 
 function App() {
     const [token, setToken] = useState(localStorage.getItem("token") || null);
     const [username, setUsername] = useState(localStorage.getItem("username") || "");
     const [isRegistering, setIsRegistering] = useState(false);
+
 
     const switchToRegister = () => setIsRegistering(true);
     const switchToLogin = () => setIsRegistering(false);
@@ -40,11 +42,14 @@ function App() {
         );
     }
 
+    //  <h4>Current User: {username}</h4>
+    //  <button className="logout-btn" onClick={handleLogout}>Logout</button>
+
     return (
         <div style={{ padding: "20px", textAlign: "center" }}>
             <h1>Recommendations</h1>
-            <h4>Current User: {username}</h4>
-            <button className="logout-btn" onClick={handleLogout}>Logout</button>
+
+            <Sidebar handleLogout={handleLogout} /> 
         </div>
     );
 }
